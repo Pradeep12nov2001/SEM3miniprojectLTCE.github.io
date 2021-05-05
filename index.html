@@ -1,675 +1,280 @@
- <!DOCTYPE HTML>
 <html>
-<head>
-
-<title  align="center">Number Conversion Website</title>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-<style>
-body{
-margin: 0;
-padding: 0;
-
-}
-
-.wrapper{
-
-position:absolute;
-width: 100%;
-              height:100%
-
-overflow: hidden;
-background: rgb(255,48,222);
-background: linear-gradient(90deg, rgba(255,48,222,1) 17%, rgba(170,68,205,1) 50%, rgba(51,113,219,1) 84%);
-
-}
-.box div{
-
-position: absolute;
-width: 60px;
-height: 60px;
-background-color: transparent;
-border: 6px solid rgba(255,255,255,0.8);
-
-}
-
-.box div:nth-child(1) {
-
-top: 12%;
-left: 42%;
-animation: animate 10s linear infinite;
-
-}
-
-.box div:nth-child(2) {
-
-top: 70%;
-left: 50%;
-animation: animate 9s linear infinite;
-
-}
-
-.box div:nth-child(3) {
-
-top: 17%;
-left: 6%;
-animation: animate 15s linear infinite;
-
-}
-
-.box div:nth-child(4) {
-
-top: 20%;
-left: 60%;
-animation: animate 9s linear infinite;
-
-}
-
-.box div:nth-child(5) {
-
-top: 67%;
-left: 10%;
-animation:animate 14s linear infinite;
-
-}
-
-.box div:nth-child(6) {
-
-top: 80%;
-left: 70%;
-animation:animate 13s linear infinite;
-
-}
-
-.box div:nth-child(7) {
-
-top: 60%;
-left: 80%;
-animation: animate 14s linear infinite;
-
-}
-
-.box div:nth-child(8) {
-
-top: 32%;
-left: 70%;
-animation: animate 12s linear infinite;
-
-}
-
-.box div:nth-child(9) {
-
-top: 90%;
-left: 25%;
-animation:animate 10s linear infinite;
-
-}
-
-.box div:nth-child(10) {
-
-top: 20%;
-left: 80%;
-animation:animate 13s linear infinite;
-
-}
-
-@keyframes animate{
-
-0%{
-
-transform: scale(0) translateY(0) rotate(0);
-opacity: 1;
-}
-100%{
-    transform: scale(1.3) translateY(-90px) rotate(360deg);
-    opacity: 0;
-}
-
-}
-
-    .modal {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 5px;
-    color: #333;
-    font-family: sans-serif;
-    line-height: 1.5;
-    max-width: 50%;
-    padding: 1rem 2rem;
-    a {
-        color: #bf0222;
-    }
-}
-
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    .modal {
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-    .warning {
-        display: none;
-    }
-
-
-
-.container {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-}
-
-
-     input[type=text]{
-    width:55%;
-    border:2px solid #aaa;
-    border-radius:6px;
-    margin:10px 0;
-    outline:none;
-    padding:10px;
-    box-sizing:border-box;
-    transition:.3s;
-  }
-
-  input[type=text]:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
-  }
-
-
- h3 {margin-left: 55px;}
-
-
-
-
-textarea:focus {
-    background: none repeat scroll 0 0 #FFFFFF;
-    outline-width: 0;
-}
-
-.para{
-
-            margin-top: 10px;
-  margin-left: 50px;
-
-}
-
-.inbox1{
-
-
-  margin-left: 50px;
-}
-
-
-       .inbox2{
-
-
-  margin-left: 70px;
-}
-
-
-
-
-
-/* custom radio button */
-.check {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 30px;
-  width: 30px;
-  background-color: lightgray;
-  border-radius: 50%;
-}
-
-.container:hover input ~ .check {
-  background-color: gray;
-}
-
-.container input:checked ~ .check {
-  background-color: red;
-}
-
-.check:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.container input:checked ~ .check:after {
-  display: block;
-}
-
-.container .check:after {
- 	top: 8px;
-    left: 8px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: white;
-}
-
-
-
-    .commentblur {
-    align-items: left;
-    display: flex;
-    justify-content: left;
-    height: 100%;
-    width: 100%;
-}
-
-
-
-
-</style>
-
-
-
-
-</head>
-
-
-<div class="wrapper"  </div>
-
- <div class="box">
-
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-
-
-
-    </div>
-
-    <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="rksZpnLo"></script>
-
-<body
-
-<br>
-
-          <br>
-          <table>
-                    <tr>     <td>
-                      <img src="https://i.imgur.com/bjDwBlM.png" alt="NWC" height="650" />
-
-                                                </td>
-
-
-
-                  <td><p  style="font-size: 50px;font-family: 'Comic Sans MS', cursive, sans-serif; color: #FFFFFF"  >Number rules the universe.</p></td></tr>
-
-
-
-</table>
-
-
-
-
-
-
-<h1    style="text-align: center; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; color: #FFFFFF"  >Number Conversion</h1>
-
-
-
-
-
-
-                     <div class="container">
-  <div class="modal">
-
-    <table  align="center">
-
-               <br>
-            <tr>
-                <td  style="font-size: 25px"> Base Select :</td><td>
-                    <input type="radio"  name='input_' value="2"   />Binary</span>   </td>
-                 <td ><input type="radio" name='input_' value="8" /> Octal </td>
-                  <td><input type="radio"name='input_' value="10" />Decimal  </td>
-                   <td><input type="radio"  name='input_' value="16" />Hexadecimal </td>
-                    <td><select id="input_num" class="form-control"  style="font-size: 16px">
-<option value="2">Binary</option>
-<option value="3">Base-3</option>
-<option value="4">Base-4</option>
-<option value="5">Base-5</option>
-<option value="6">Base-6</option>
-<option value="7">Base-7</option>
-<option value="8">Octal</option>
-<option value="9">Base-9</option>
-<option value="10">Decimal</option>
-<option value="11">Base-11</option>
-<option value="12">Base-12</option>
-<option value="13">Base-13</option>
-<option value="14">Base-14</option>
-<option value="15">Base-15</option>
-<option value="16">Hexadecimal</option>
-<option value="17">Base-17</option>
-<option value="18">Base-18</option>
-<option value="19">Base-19</option>
-<option value="20">Base-20</option>
-<option value="21">Base-21</option>
-<option value="22">Base-22</option>
-<option value="23">Base-23</option>
-<option value="24">Base-24</option>
-<option value="25">Base-25</option>
-<option value="26">Base-26</option>
-<option value="27">Base-27</option>
-<option value="28">Base-28</option>
-<option value="29">Base-29</option>
-<option value="30">Base-30</option>
-<option value="31">Base-31</option>
-<option value="32">Base-32</option>
-<option value="33">Base-33</option>
-<option value="34">Base-34</option>
-<option value="35">Base-35</option>
-<option value="36">Base-36</option>
-</select></td>
-            </tr>
-            </table>
-
-
-
-
-         <div class="inbox1">   <p  style="text-align: center">From:   <input id="input_value" type="text" value=""  onpropertychange="px()" onchange="px()" oninput="px()" class="form-control" placeholder="Input"    style="font-size: medium; color: #DB0000""></p> </div>
-
-
-
-
-                      <table align="center">
-                 <tr>
-                      <td  style="font-size: 25px">Base Select :</td>
-                      <td><input type="radio" name='output_' value="2" />Binary    </td>
-                      <td><input type="radio" name='output_' value="8" />Octal </td>
-                      <td><input type="radio" name='output_' value="10"/>Decimal </td>
-                       <td><input type="radio" name='output_' value="16" />Hexadecimal </td>
-                         <td><select id="output_num" onchange="px(1);" class="form-control"  style="font-size: 16px" >
-<option value="2">Binary</option>
-<option value="3">Base-3</option>
-<option value="4">Base-4</option>
-<option value="5">Base-5</option>
-<option value="6">Base-6</option>
-<option value="7">Base-7</option>
-<option value="8">Octal</option>
-<option value="9">Base-9</option>
-<option value="10">Decimal</option>
-<option value="11">Base-11</option>
-<option value="12">Base-12</option>
-<option value="13">Base-13</option>
-<option value="14">Base-14</option>
-<option value="15">Base-15</option>
-<option value="16">Hexadecimal</option>
-<option value="17">Base-17</option>
-<option value="18">Base-18</option>
-<option value="19">Base-19</option>
-<option value="20">Base-20</option>
-<option value="21">Base-21</option>
-<option value="22">Base-22</option>
-<option value="23">Base-23</option>
-<option value="24">Base-24</option>
-<option value="25">Base-25</option>
-<option value="26">Base-26</option>
-<option value="27">Base-27</option>
-<option value="28">Base-28</option>
-<option value="29">Base-29</option>
-<option value="30">Base-30</option>
-<option value="31">Base-31</option>
-<option value="32">Base-32</option>
-<option value="33">Base-33</option>
-<option value="34">Base-34</option>
-<option value="35">Base-35</option>
-<option value="36">Base-36</option>
-</select></td>
-
-</table>
-
-
-
-
-
- <div class="inbox2"><p  style="text-align: center">To:    <input type="text" id="output_value" class="form-control"  placeholder="Result will show here...."   style="font-size: medium; color: #17B30F"></input>       </p>      </div>
-
-<br>
-
- </div>
-                             </div>
-
-<br>   <br>  <br>
-
-      <div class="para">
-<p   style="font-family: 'Comic Sans MS', cursive, sans-serif; color: #F0F71E; font-size: 27px"   >
-    The number system is simply a system to represent or express numbers.<br>
-There are various types of number systems and the most commonly used <br> ones are decimal number system,
- binary number system,<br> octal number system and hexadecimal number system.    </p>
-
-
-
- </div>
-
-                 <br><br>
-
-
-
-
-
-
-
+<head>	<title>Binary Calculator</title>
+	<meta name="description" content="This free binary calculator can add, subtract, multiply, and divide binary values, as well as convert between binary and decimal values. Learn more about the use of binary, or explore hundreds of other calculators addressing math, finance, health, and fitness, and more." />
+	<script src="//d26tpo4cm8sb6k.cloudfront.net/js/common.js"></script>
+	<link rel="stylesheet" href="//d26tpo4cm8sb6k.cloudfront.net/style2.css" />
+<link rel="canonical" href="https://www.calculator.net/binary-calculator.html" />
+	<link rel="apple-touch-icon" sizes="180x180" href="//d26tpo4cm8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="//d26tpo4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="//d26tpo4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel="manifest" href="/manifest.json"></head>
+<body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo"><a href="/"><img src="//d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width="208" height="22"></a></div>
+			</div>
+</div>
+<div id="clear"></div><div id="contentout"><div id="content"><div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">home</span></a><meta itemprop="position" content="1" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/math-calculator.html" itemprop="item"><span itemprop="name">math</span></a><meta itemprop="position" content="2" /></span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/binary-calculator.html" itemprop="item"><span itemprop="name">binary calculator</span></a><meta itemprop="position" content="3" /></span></div>
+<h1>Binary Calculator</h1>
+
+<h2>Binary Calculation&mdash;Add, Subtract, Multiply, or Divide</h2>
+<h2 class="h2result">Result</h2><p class="bigtext">Binary value:<div class="bigtext" style="padding-left:10px;">10101010 + 11001100 <br> = <font color="green"><b>0101110110</b></font></div><br>Decimal value:<div class="bigtext" style="padding-left:10px;">170 + 204 <br> = <font color="green"><b>374</b></font></div></p><table width="100%" class="panel">
+<form action="/binary-calculator.html" name="calform">
+	<tr>
+		<td align="center">
+		<input type="text" name="number1" maxlength="64" id="number1" value="10101010" class="inlongest">
+		&nbsp;
+		<select name="c2op" id="c2op">
+			<option value="+" selected>+</option>
+			<option value="-" >-</option>
+			<option value="x" >&#215;</option>
+			<option value="/" >&#247;</option>
+		</select>
+		&nbsp;
+		<input type="text" name="number2" maxlength="64" id="number2" value="11001100" class="inlongest">
+		<span class="bigtext"><b> = ?</b></span>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<input type="hidden" name="calctype" value="op">
+			<input type="image" src="//d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin-top:10px;">
+			<img src="//d26tpo4cm8sb6k.cloudfront.net/img/svg/clear.svg" onClick="clearForm(document.calform);" class="clearbtn">
+		</td>
+	</tr>
 </form>
+</table>
+<div style="padding:10px 0px;text-align:center;">
+</div>
 
+<br>
+<a name="binary2decimal"></a>
+<h2>Convert Binary Value to Decimal Value</h2>
+<div class="panel">
+<table align="center">
+<form action="/binary-calculator.html#binary2decimal" name="calform2">
+	<tr>
+		<td align="center">
+			Binary Value:			<input type="text" name="b2dnumber1" maxlength="64" id="b2dnumber1" value="10101010" class="inlongest">
+			<span class="bigtext"><b> = ?</b></span>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<input type="hidden" name="calctype" value="b2d">
+			<input type="image" src="//d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin-top:10px;">
+			<img src="//d26tpo4cm8sb6k.cloudfront.net/img/svg/clear.svg" onClick="clearForm(document.calform2);" class="clearbtn">
+		</td>
+	</tr>
+</form>
+</table>
+</div>
+<br>
+<a name="decimal2binary"></a>
+<h2>Convert Decimal Value to Binary Value</h2>
+<div class="panel">
+<table align="center">
+<form action="/binary-calculator.html#decimal2binary" name="calform3">
+	<tr>
+		<td align="center">
+			Decimal Value:			<input type="text" name="d2bnumber1" maxlength="15" id="d2bnumber1" value="170" class="inlongest">
+			<span class="bigtext"><b> = ?</b></span>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<input type="hidden" name="calctype" value="d2b">
+			<input type="image" src="//d26tpo4cm8sb6k.cloudfront.net/img/svg/calculate.svg" value="Calculate" alt="Calculate" style="margin-top:10px;">
+			<img src="//d26tpo4cm8sb6k.cloudfront.net/img/svg/clear.svg" onClick="clearForm(document.calform3);" class="clearbtn">
+		</td>
+	</tr>
+</form>
+</table>
+</div>
+<br><p><fieldset><legend>Related</legend><a href="/hex-calculator.html">Hex Calculator</a> | <a href="/ip-subnet-calculator.html">IP Subnet Calculator</a></fieldset></p>
 
+<br>
+<p>The binary system is a numerical system that functions virtually identically to the decimal number system that people are likely more familiar with. While the decimal number system uses the number 10 as its base, the binary system uses 2. Furthermore, although the decimal system uses the digits 0 through 9, the binary system uses only 0 and 1, and each digit is referred to as a bit. Apart from these differences, operations such as addition, subtraction, multiplication, and division are all computed following the same rules as the decimal system. </p>
 
+<p>Almost all modern technology and computers use the binary system due to its ease of implementation in digital circuitry using logic gates. It is much simpler to design hardware that only needs to detect two states, on and off (or true/false, present/absent, etc.). Using a decimal system would require hardware that can detect 10 states for the digits 0 through 9, and is more complicated. </p>
 
-<br><br>
+<p>Below are some typical conversions between binary and decimal values:</p><br>
+<p align="center"><b>Binary/Decimal Conversion</b></p>
+<table class="cinfoT" width="50%" align="center">
+	<tr><td class="cinfoHd">Decimal</td><td class="cinfoHdL">Binary</td></tr>
+	<tr><td>0</td><td class="cinfoBodL">0</td></tr>
+	<tr><td>1</td><td class="cinfoBodL">1</td></tr>
+	<tr><td>2</td><td class="cinfoBodL">10</td></tr>
+	<tr><td>3</td><td class="cinfoBodL">11</td></tr>
+	<tr><td>4</td><td class="cinfoBodL">100</td></tr>
+	<tr><td>7</td><td class="cinfoBodL">111</td></tr>
+	<tr><td>8</td><td class="cinfoBodL">1000</td></tr>
+	<tr><td>10</td><td class="cinfoBodL">1010</td></tr>
+	<tr><td>16</td><td class="cinfoBodL">10000</td></tr>
+	<tr><td>20</td><td class="cinfoBodL">10100</td></tr>
+</table><br>
 
+<p>While working with binary may initially seem confusing, understanding that each binary place value represents 2<sup>n</sup>, just as each decimal place represents 10<sup>n</sup>, should help clarify. Take the number 8 for example. In the decimal number system, 8 is positioned in the first decimal place left of the decimal point, signifying the 10<sup>0</sup> place. Essentially this means:</p>
+<p align="center">
+		8 &#215; 10<sup>0</sup> = 8 &#215; 1 = 8
+</p>
+<p>Using the number 18 for comparison:</p>
+<p align="center">
+		(1 &#215; 10<sup>1</sup>) + (8 &#215; 10<sup>0</sup>) = 10 + 8 = 18
+</p>
+<p>In binary, 8 is represented as 1000. Reading from right to left, the first 0 represents 2<sup>0</sup>, the second 2<sup>1</sup>, the third 2<sup>2</sup>, and the fourth 2<sup>3</sup>; just like the decimal system, except with a base of 2 rather than 10. Since 2<sup>3</sup> = 8, a 1 is entered in its position yielding 1000. Using 18, or 10010 as an example:</p>
+<p align="center">
+		18 = 16 + 2 = 2<sup>4</sup> + 2<sup>1</sup><br>
+		10010 = (1 &#215; 2<sup>4</sup>) + (0 &#215; 2<sup>3</sup>) + (0 &#215; 2<sup>2</sup>) + (1 &#215; 2<sup>1</sup>) + (0 &#215; 2<sup>0</sup>) = 18
+</p>
+<p>The step by step process to convert from the decimal to the binary system is:</p>
+<ol>
+	<li>Find the largest power of 2 that lies within the given number</li>
+	<li>Subtract that value from the given number</li>
+	<li>Find the largest power of 2 within the remainder found in step 2</li>
+	<li>Repeat until there is no remainder</li>
+	<li>Enter a 1 for each binary place value that was found, and a 0 for the rest</li>
+</ol>
 
+<p>Using the target of 18 again as an example, below is another way to visualize this:</p>
+<br><table class="cinfoT" align="center">
+<tr><td class="cinfoHd" width="30%">2<sup>n</sup></td><td class="cinfoHdL" width="14%">2<sup>4</sup></td><td class="cinfoHdL" width="14%">2<sup>3</sup></td><td class="cinfoHdL" width="14%">2<sup>2</sup></td><td class="cinfoHdL" width="14%">2<sup>1</sup></td><td class="cinfoHdL" width="14%">2<sup>0</sup></td></tr>
+<tr><td>Instances within 18</td><td class="cinfoBodL">1</td><td class="cinfoBodL">0</td><td class="cinfoBodL">0</td><td class="cinfoBodL">1</td><td class="cinfoBodL">0</td></tr>
+<tr><td>Target: 18</td><td class="cinfoBodL">18 - 16 = 2</td><td class="cinfoBodL" colspan="2" align="center">&rarr;</td><td class="cinfoBodL">2 - 2 = 0</td><td class="cinfoBodL">&nbsp;</td></tr>
+</table><br>
 
+<p>Converting from the binary to the decimal system is simpler. Determine all of the place values where 1 occurs, and find the sum of the values.</p>
+<p align="center">
+	EX: 	10111 = (1 &#215; 2<sup>4</sup>) + (0 &#215; 2<sup>3</sup>) + (1 &#215; 2<sup>2</sup>) + (1 &#215; 2<sup>1</sup>) + (1 &#215; 2<sup>0</sup>) = 23
+</p>
+<br><table class="cinfoT" align="center" width="50%">
+<tr><td class="cinfoHd">2<sup>4</sup></td><td class="cinfoHdL">2<sup>3</sup></td><td class="cinfoHdL">2<sup>2</sup></td><td class="cinfoHdL">2<sup>1</sup></td><td class="cinfoHdL">2<sup>0</sup></td></tr>
+<tr><td class="cinfoBodL">1</td><td class="cinfoBodL">0</td><td class="cinfoBodL">1</td><td class="cinfoBodL">1</td><td class="cinfoBodL">1</td></tr>
+<tr><td class="cinfoBodL">16</td><td class="cinfoBodL">0</td><td class="cinfoBodL">4</td><td class="cinfoBodL">2</td><td class="cinfoBodL">1</td></tr>
+</table><br>
+<p align="center">
+	Hence: 16 + 4 + 2 + 1 = 23.
+</p>
 
+<h3>Binary Addition</h3>
+<p>Binary addition follows the same rules as addition in the decimal system except that rather than carrying a 1 over when the values added equal 10, carry over occurs when the result of addition equals 2. Refer to the example below for clarification.</p>
+<p>Note that in the binary system: </p>
+<ul>
+	0 + 0 = 0<br>
+	0 + 1 = 1<br>
+	1 + 0 = 1<br>
+	1 + 1 = 0, carry over the 1, i.e. 10
+</ul>
+<p>EX:</p>
+<ul>
+<table>
+	<tr align="right" valign="bottom"><td colspan="2">&nbsp;</td><td><sup>1</sup>0</td><td><sup>1</sup>1</td><td><sup>1</sup>1</td><td><sup>1</sup>0</td><td>&nbsp;1</td></tr>
+	<tr align="right"><td>+ &nbsp; </td><td>&nbsp;</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+	<tr align="right"><td colspan="7" bgcolor="#000000" height="1"></td></tr>
+	<tr align="right"><td>= &nbsp; </td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</table>
+</ul>
 
+<p>The only real difference between binary and decimal addition is that the value 2 in the binary system is the equivalent of 10 in the decimal system. Note that the superscripted 1's represent digits that are carried over. A common mistake to watch out for when conducting binary addition is in the case where 1 + 1 = 0 also has a 1 carried over from the previous column to its right. The value at the bottom should then be 1 from the carried over 1 rather than 0. This can be observed in the third column from the right in the above example.</p>
 
-  <h3  style="color: #FFFFFF">Write Your Comments</h3>
+<h3>Binary Subtraction</h3>
+<p>Similarly to binary addition, there is little difference between binary and decimal subtraction except those that arise from using only the digits 0 and 1. Borrowing occurs in any instance where the number that is subtracted is larger than the number it is being subtracted from. In binary subtraction, the only case where borrowing is necessary is when 1 is subtracted from 0. When this occurs, <b>the 0 in the borrowing column essentially becomes "2"</b> (changing the 0-1 into 2-1 = 1) while reducing the 1 in the column being borrowed from by 1. If the following column is also 0, borrowing will have to occur from each subsequent column until a column with a value of 1 can be reduced to 0. Refer to the example below for clarification.</p>
+<p>Note that in the binary system: </p>
+<ul>
+	0 - 0 = 0<br>
+	0 - 1 = 1, borrow 1, resulting in -1 carried over	<br>
+	1 - 0 = 1<br>
+	1 - 1 = 0
+</ul>
+<p>EX1:</p>
+<ul>
+<table>
+	<tr align="right" valign="bottom"><td colspan="2">&nbsp;</td><td><sup>-1</sup>1</td><td><sup>2</sup>0</td><td>&nbsp;1</td><td>&nbsp;1</td><td>&nbsp;1</td></tr>
+	<tr align="right"><td>&ndash; &nbsp; </td><td>&nbsp;</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+	<tr align="right"><td colspan="7" bgcolor="#000000" height="1"></td></tr>
+	<tr align="right"><td>= &nbsp; </td><td>&nbsp;</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+</table>
+</ul>
+<p>EX2:</p>
+<ul>
+<table>
+	<tr align="right" valign="bottom"><td colspan="2">&nbsp;</td><td><sup>-1</sup>1</td><td><sup>2-1</sup>0</td><td>&nbsp;0</td></tr>
+	<tr align="right"><td>&ndash; &nbsp; </td><td>&nbsp;</td><td>0</td><td>1</td><td>1</td></tr>
+	<tr align="right"><td colspan="5" bgcolor="#000000" height="1"></td></tr>
+	<tr align="right"><td>= &nbsp; </td><td>&nbsp;</td><td>0</td><td>0</td><td>1</td></tr>
+</table>
+</ul>
+<p>Note that the superscripts displayed are the changes that occur to each bit when borrowing. The borrowing column essentially obtains 2 from borrowing, and the column that is borrowed from is reduced by 1.</p>
 
+<h3>Binary Multiplication</h3>
+<p>Binary multiplication is arguably simpler than its decimal counterpart. Since the only values used are 0 and 1, the results that must be added are either the same as the first term, or 0. Note that in each subsequent row, placeholder 0's need to be added, and the value shifted to the left, just like in decimal multiplication. The complexity in binary multiplication arises from tedious binary addition dependent on how many bits are in each term. Refer to the example below for clarification.</p>
+<p>Note that in the binary system: </p>
+<ul>
+0 &#215; 0 = 0<br>
+0 &#215; 1 = 0<br>
+1 &#215; 0 = 0<br>
+1 &#215; 1 = 1
+</ul>
+<p>EX:</p>
+<ul>
+<table>
+	<tr align="right" valign="bottom"><td colspan="3">&nbsp;</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+	<tr align="right"><td>&#215; &nbsp; </td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>1</td><td>1</td></tr>
+	<tr align="right"><td colspan="8" bgcolor="#000000" height="1"></td></tr>
 
- <div class=para>
+	<tr align="right" valign="bottom"><td colspan="3">&nbsp;</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+	<tr align="right" valign="bottom"><td>+ &nbsp; </td><td>&nbsp;</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+	<tr align="right"><td colspan="8" bgcolor="#000000" height="1"></td></tr>
 
-                <div class="commentblur">
-  <div class="modal">
+	<tr align="right"><td>= &nbsp; </td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+</table>
+</ul>
 
+<p>As can be seen in the example above, the process of binary multiplication is the same as it is in decimal multiplication. Note that the 0 placeholder is written in the second line. Typically the 0 placeholder is not visually present in decimal multiplication. While the same can be done in this example (with the 0 placeholder being assumed rather than explicit), it is included in this example because the 0 is relevant for any binary addition / subtraction calculator, like the one provided on this page. Without the 0 being shown, it would be possible to make the mistake of excluding the 0 when adding the binary values displayed above. Note again that in the binary system, any 0 to the right of a 1 is relevant, while any 0 to the left of the last 1 in the value is not.</p>
+<p>EX:</p>
+<ul>
+	 	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 0 1 0 1 1 0 0 <br>
+		= 0 0 1 0 1 0 1 1 0 0 <br>
+		&ne; 1 0 1 0 1 1 0 0 0 0
+</ul>
 
-<div class="fb-comments" data-href="https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/" data-numposts="6" data-width="500" data-colorscheme="light"></div>
+<h3>Binary Division</h3>
+<p>The process of binary division is similar to long division in the decimal system. The dividend is still divided by the divisor in the same manner, with the only significant difference being the use of binary rather than decimal subtraction. Note that a good understanding of binary subtraction is important for conducting binary division. Refer to the example below, as well as to the binary subtraction section for clarification.</p>
+<p><img src="//d26tpo4cm8sb6k.cloudfront.net/img/binary/binary-division.png"></p>
 
 
 </div>
-            </div> </div>
-
-
-<br><br>
-<P style="text-align: center; color: #FCFFFB" >          Share On  <br>
-
-
-
-
-
-    <a href="http://instagram.com/###?ref=badge"https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/ class="ig-b- ig-b-v-24"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram" />
-      </a>
-
-
-
-    <a href="http://www.facebook.com/sharer.php?u=https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/" target="_blank">
-    <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt="Facebook" />
-    </a>
-
-
-    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/" target="_blank">
-       <img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn" />
-    </a>
-
-
-
-
-    <a href="https://twitter.com/share?url=https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/" target="_blank">
-        <img src="https://img.icons8.com/fluent/48/000000/twitter.png" alt="Twitter" />
-    </a>
-
-
-
-
-      </P>
-
-
-
-                      <table align="center"> <tr>       <td>
-
-                    <a href="https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/">
-<img border="0" alt="HOME" src="https://i.imgur.com/PW5Ccl0.png"  height="300">
-</a>
-
-                      <a href="https://drive.google.com/file/d/1Hw91XA9c1CuLKp9PhAt1ujZ963ZsagEBf/view?usp=sharing">
-<img border="0" alt="ABOUT US" src="https://i.imgur.com/oZLxAI6.png"  height="300">
-
-
-</a>                                            </td>
-                                              </tr>
-                                          </table>
-
-
-                                          <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
-$(document).ready(function() {
-    $('[name="input_"]').click(function (){
-        $('#input_num').val($(this).val());
-        $('#input_value').val("");
-        $('#output_value').val("");
-    });
-    $('[name="output_"]').click(function (){
-        $('#output_num').val($(this).val());
-        px(1);
-    });
-    $("#input_num").change(function(){
-        $("#input_area input").removeAttr("checked");
-        var val = $(this).val();
-        $("#input_area input[value="+val+"]").attr("checked","checked");
-        $('#input_value').val("");
-        $('#output_value').val("");
-    });
-    $("#output_num").change(function(){
-        $("#output_area input").removeAttr("checked");
-        var val = $(this).val();
-        $("#output_area input[value="+val+"]").attr("checked","checked");
-        px(1);
-    });
-});
-function pxparseFloat(x,y){
-    x=x.toString();
-    var num=x;
-    var data=num.split(".");
-    var you=data[1].split("");
-    var sum=0;
-    for(var i=0;i<data[1].length;i++){
-        sum+=you[i]*Math.pow(y,-1*(i+1))
-    }
-    return parseInt(data[0],y)+sum;
-}
-function zhengze(x){
-    var str;
-    x=parseInt(x);
-    if(x<=10){
-        str=new RegExp("^[+\\-]?[0-"+(x-1)+"]*[.]?[0-"+(x-1)+"]*$","gi");
-    }else{
-        var letter="";
-        switch(x){
-            case 11:letter="a";break;
-            case 12:letter="b";break;
-            case 13:letter="c";break;
-            case 14:letter="d";break;
-            case 15:letter="e";break;
-            case 16:letter="f";break;
-            case 17:letter="g";break;
-            case 18:letter="h";break;
-            case 19:letter="i";break;
-            case 20:letter="j";break;
-            case 21:letter="k";break;
-            case 22:letter="l";break;
-            case 23:letter="m";break;
-            case 24:letter="n";break;
-            case 25:letter="o";break;
-            case 26:letter="p";break;
-            case 27:letter="q";break;
-            case 28:letter="r";break;
-            case 29:letter="s";break;
-            case 30:letter="t";break;
-            case 31:letter="u";break;
-            case 32:letter="v";break;
-            case 33:letter="w";break;
-            case 34:letter="x";break;
-            case 35:letter="y";break;
-            case 36:letter="z";break;
-        }
-        str=new RegExp("^[+\\-]?[0-9a-"+letter+"]*[.]?[0-9a-"+letter+"]*$","gi");
-    }
-    return str;
-}
-var n=50;
-var shurukuang="";
-var flag="";
-function px(y){
-    if($("#input_value").val()!=flag||y){
-        flag=$("#input_value").val();
-        if($("#input_num").selectedIndex<n){
-            $("#input_value").val("");
-            $("#output_value").val("");
-        }else{
-            var px00=$("#input_value").val();
-            var px0=px00.match(zhengze($("#input_num").val()));
-            if(px0){
-                if(px0[0].indexOf(".")==-1){
-                    var px1=parseInt(px0,$('#input_num').val());
-                }else{
-                    var px1=pxparseFloat(px0,$('#input_num').val());
-                }
-                px1=px1.toString($('#output_num').val());
-                $("#output_value").val(px1);
-                shurukuang=px00;
-            }else{
-                $("#input_value").val(shurukuang);
-            }
-        }
-        n=$("#input_num").selectedIndex;
-    }
-    if($("#input_value").val()==""){
-        $("#output_value").val("");
-    }
-}
+	<div id="right">
+		<div style="padding-top:10px; text-align:center;">
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1057446/Calculator-Top-Right-Desktop', [[300, 250], [336, 280]], 'div-gpt-ad-1589567013929-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+  });
 </script>
+<!-- /1057446/Calculator-Top-Right-Desktop -->
+<div id='div-gpt-ad-1589567013929-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589567013929-0'); });
+  </script>
 </div>
 </div>
+<table align="center" id="searchbox"><form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off"><tr><td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" onkeyup="return calcSearch();"></td><td><span id="bluebtn" onClick="return calcSearch();">Search</span></td></tr><tr><td colspan="2"><div id="calcSearchOut"></div></td></tr></form></table><div id="othercalc"><div id="octitle"><a href="/math-calculator.html">Math Calculators</a></div><div id="occontent"><a href="/scientific-calculator.html">Scientific</a><a href="/fraction-calculator.html">Fraction</a><a href="/percent-calculator.html">Percentage</a><a href="/triangle-calculator.html">Triangle</a><a href="/volume-calculator.html">Volume</a><a href="/standard-deviation-calculator.html">Standard Deviation</a><a href="/random-number-generator.html">Random Number Generator</a><a href="/math-calculator.html">More Math Calculators</a></div><div id="ocother"><a href="/financial-calculator.html">Financial</a> | <a href="/fitness-and-health-calculator.html">Fitness and Health</a> | <a href="/math-calculator.html">Math</a> | <a href="/other-calculator.html">Other</a></div></div>	</div>
 </div>
-
-
-
-
-
- </body>
+<div id="clear"></div>
+<div id="footer"><div id="footerin"><div id="footernav"><a href="/about-us.html">about us</a> | <a href="/sitemap.html">sitemap</a> | <a href="/about-us.html#terms">terms of use</a> | <a href="/about-us.html#privacy">privacy policy</a> &nbsp;  &copy; 2008 - 2021 <a href="//www.calculator.net">calculator.net</a></div></div></div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3068863-11']);
+_gaq.push(['_trackPageview','/binary-calculator.html?number1=10101010&c2op=%2B&number2=11001100&calctype=op&x=87&y=26_____Section_3_IN__do']);
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script>
+<script async>showTopNav(3);</script></body>
 </html>
