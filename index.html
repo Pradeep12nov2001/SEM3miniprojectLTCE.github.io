@@ -1,675 +1,379 @@
- <!DOCTYPE HTML>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+<script async src="/lib/tagmng4.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/lib/rapidz.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/lib/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/lib/favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/lib/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/lib/favicon/manifest.json">
+<link rel="mask-icon" href="/lib/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/lib/favicon/favicon.ico">
+<meta name="msapplication-config" content="/lib/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<meta name="format-detection" content="telephone=no">
 
-<title  align="center">Number Conversion Website</title>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
+<title>Binary calculator | Bitwise calculator</title>
+<meta name="description" content="Binary calculator,Hex calculator: add,sub,mult,div,xor,or,and,not,shift.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <style>
-body{
-margin: 0;
-padding: 0;
-
-}
-
-.wrapper{
-
-position:absolute;
-width: 100%;
-              height:100%
-
-overflow: hidden;
-background: rgb(255,48,222);
-background: linear-gradient(90deg, rgba(255,48,222,1) 17%, rgba(170,68,205,1) 50%, rgba(51,113,219,1) 84%);
-
-}
-.box div{
-
-position: absolute;
-width: 60px;
-height: 60px;
-background-color: transparent;
-border: 6px solid rgba(255,255,255,0.8);
-
-}
-
-.box div:nth-child(1) {
-
-top: 12%;
-left: 42%;
-animation: animate 10s linear infinite;
-
-}
-
-.box div:nth-child(2) {
-
-top: 70%;
-left: 50%;
-animation: animate 9s linear infinite;
-
-}
-
-.box div:nth-child(3) {
-
-top: 17%;
-left: 6%;
-animation: animate 15s linear infinite;
-
-}
-
-.box div:nth-child(4) {
-
-top: 20%;
-left: 60%;
-animation: animate 9s linear infinite;
-
-}
-
-.box div:nth-child(5) {
-
-top: 67%;
-left: 10%;
-animation:animate 14s linear infinite;
-
-}
-
-.box div:nth-child(6) {
-
-top: 80%;
-left: 70%;
-animation:animate 13s linear infinite;
-
-}
-
-.box div:nth-child(7) {
-
-top: 60%;
-left: 80%;
-animation: animate 14s linear infinite;
-
-}
-
-.box div:nth-child(8) {
-
-top: 32%;
-left: 70%;
-animation: animate 12s linear infinite;
-
-}
-
-.box div:nth-child(9) {
-
-top: 90%;
-left: 25%;
-animation:animate 10s linear infinite;
-
-}
-
-.box div:nth-child(10) {
-
-top: 20%;
-left: 80%;
-animation:animate 13s linear infinite;
-
-}
-
-@keyframes animate{
-
-0%{
-
-transform: scale(0) translateY(0) rotate(0);
-opacity: 1;
-}
-100%{
-    transform: scale(1.3) translateY(-90px) rotate(360deg);
-    opacity: 0;
-}
-
-}
-
-    .modal {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 5px;
-    color: #333;
-    font-family: sans-serif;
-    line-height: 1.5;
-    max-width: 50%;
-    padding: 1rem 2rem;
-    a {
-        color: #bf0222;
-    }
-}
-
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    .modal {
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-    .warning {
-        display: none;
-    }
-
-
-
-.container {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-}
-
-
-     input[type=text]{
-    width:55%;
-    border:2px solid #aaa;
-    border-radius:6px;
-    margin:10px 0;
-    outline:none;
-    padding:10px;
-    box-sizing:border-box;
-    transition:.3s;
-  }
-
-  input[type=text]:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
-  }
-
-
- h3 {margin-left: 55px;}
-
-
-
-
-textarea:focus {
-    background: none repeat scroll 0 0 #FFFFFF;
-    outline-width: 0;
-}
-
-.para{
-
-            margin-top: 10px;
-  margin-left: 50px;
-
-}
-
-.inbox1{
-
-
-  margin-left: 50px;
-}
-
-
-       .inbox2{
-
-
-  margin-left: 70px;
-}
-
-
-
-
-
-/* custom radio button */
-.check {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 30px;
-  width: 30px;
-  background-color: lightgray;
-  border-radius: 50%;
-}
-
-.container:hover input ~ .check {
-  background-color: gray;
-}
-
-.container input:checked ~ .check {
-  background-color: red;
-}
-
-.check:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.container input:checked ~ .check:after {
-  display: block;
-}
-
-.container .check:after {
- 	top: 8px;
-    left: 8px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: white;
-}
-
-
-
-    .commentblur {
-    align-items: left;
-    display: flex;
-    justify-content: left;
-    height: 100%;
-    width: 100%;
-}
-
-
-
-
+   h1 { font-size:1.6rem; }
+   h2 { font-size:1.4rem; }
+   h4 { font-size:1.2rem; }
+   #calcform { background:#eee8d5; padding:20px; max-width:600px; }
+   #calcform button span { font-size:large; font-weight:bold; }
 </style>
 
-
-
-
 </head>
+<body>
+<div id="header">
+<div>
+<div id="logo" class="box">
+<p>
+<a href="/">RapidTables</a>
+</p>
+</div>
+</div>
+</div>
+<div id="wrapper">
+<div id="nav">
 
+<a href="/">Home</a>&rsaquo;<a href="../index.html">Calculators</a>&rsaquo;<a href="index.html">Math Calculators</a>&rsaquo; Binary calculator
 
-<div class="wrapper"  </div>
+</div>
+<div id="top-ad">
 
- <div class="box">
+<ins class="adsbygoogle adslot_1" data-ad-client="ca-pub-5335356106950684" data-ad-slot="6506963100"></ins>
+</div>
+<div id="lcol">
+<div id="doc">
 
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+<h1>Binary Calculator</h1>
+<form id="calcform" name="calcform" autocomplete="off">
+<div class="form-group">
+<label for="x1">First number</label>
+<div class="input-group">
+<input type="text" id="x1" name="x1" class="form-control" autofocus>
+<div class="input-group-append">
+<select id="b1" class="form-control">
+<option>Binary</option>
+<option>Decimal</option>
+<option>Hex</option>
+</select>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label for="op">Operation</label>
+<select id="op" onchange="selchange()" class="form-control">
+<option>add (+)</option>
+<option>sub (-)</option>
+<option>mult (&times;)</option>
+<option>div (&div;)</option>
+<option>pow (^)</option>
+<option>and (&amp;)</option>
+<option>or (|)</option>
+<option>not (~)</option>
+<option>xor (^)</option>
+<option>left shift (&lt;&lt;)</option>
+<option>right shift (&gt;&gt;)</option>
 
-
-
-    </div>
-
-    <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="rksZpnLo"></script>
-
-<body
-
-<br>
-
-          <br>
-          <table>
-                    <tr>     <td>
-                      <img src="https://i.imgur.com/bjDwBlM.png" alt="NWC" height="650" />
-
-                                                </td>
-
-
-
-                  <td><p  style="font-size: 50px;font-family: 'Comic Sans MS', cursive, sans-serif; color: #FFFFFF"  >Number rules the universe.</p></td></tr>
-
-
-
-</table>
-
-
-
-
-
-
-<h1    style="text-align: center; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; color: #FFFFFF"  >Number Conversion</h1>
-
-
-
-
-
-
-                     <div class="container">
-  <div class="modal">
-
-    <table  align="center">
-
-               <br>
-            <tr>
-                <td  style="font-size: 25px"> Base Select :</td><td>
-                    <input type="radio"  name='input_' value="2"   />Binary</span>   </td>
-                 <td ><input type="radio" name='input_' value="8" /> Octal </td>
-                  <td><input type="radio"name='input_' value="10" />Decimal  </td>
-                   <td><input type="radio"  name='input_' value="16" />Hexadecimal </td>
-                    <td><select id="input_num" class="form-control"  style="font-size: 16px">
-<option value="2">Binary</option>
-<option value="3">Base-3</option>
-<option value="4">Base-4</option>
-<option value="5">Base-5</option>
-<option value="6">Base-6</option>
-<option value="7">Base-7</option>
-<option value="8">Octal</option>
-<option value="9">Base-9</option>
-<option value="10">Decimal</option>
-<option value="11">Base-11</option>
-<option value="12">Base-12</option>
-<option value="13">Base-13</option>
-<option value="14">Base-14</option>
-<option value="15">Base-15</option>
-<option value="16">Hexadecimal</option>
-<option value="17">Base-17</option>
-<option value="18">Base-18</option>
-<option value="19">Base-19</option>
-<option value="20">Base-20</option>
-<option value="21">Base-21</option>
-<option value="22">Base-22</option>
-<option value="23">Base-23</option>
-<option value="24">Base-24</option>
-<option value="25">Base-25</option>
-<option value="26">Base-26</option>
-<option value="27">Base-27</option>
-<option value="28">Base-28</option>
-<option value="29">Base-29</option>
-<option value="30">Base-30</option>
-<option value="31">Base-31</option>
-<option value="32">Base-32</option>
-<option value="33">Base-33</option>
-<option value="34">Base-34</option>
-<option value="35">Base-35</option>
-<option value="36">Base-36</option>
-</select></td>
-            </tr>
-            </table>
-
-
-
-
-         <div class="inbox1">   <p  style="text-align: center">From:   <input id="input_value" type="text" value=""  onpropertychange="px()" onchange="px()" oninput="px()" class="form-control" placeholder="Input"    style="font-size: medium; color: #DB0000""></p> </div>
-
-
-
-
-                      <table align="center">
-                 <tr>
-                      <td  style="font-size: 25px">Base Select :</td>
-                      <td><input type="radio" name='output_' value="2" />Binary    </td>
-                      <td><input type="radio" name='output_' value="8" />Octal </td>
-                      <td><input type="radio" name='output_' value="10"/>Decimal </td>
-                       <td><input type="radio" name='output_' value="16" />Hexadecimal </td>
-                         <td><select id="output_num" onchange="px(1);" class="form-control"  style="font-size: 16px" >
-<option value="2">Binary</option>
-<option value="3">Base-3</option>
-<option value="4">Base-4</option>
-<option value="5">Base-5</option>
-<option value="6">Base-6</option>
-<option value="7">Base-7</option>
-<option value="8">Octal</option>
-<option value="9">Base-9</option>
-<option value="10">Decimal</option>
-<option value="11">Base-11</option>
-<option value="12">Base-12</option>
-<option value="13">Base-13</option>
-<option value="14">Base-14</option>
-<option value="15">Base-15</option>
-<option value="16">Hexadecimal</option>
-<option value="17">Base-17</option>
-<option value="18">Base-18</option>
-<option value="19">Base-19</option>
-<option value="20">Base-20</option>
-<option value="21">Base-21</option>
-<option value="22">Base-22</option>
-<option value="23">Base-23</option>
-<option value="24">Base-24</option>
-<option value="25">Base-25</option>
-<option value="26">Base-26</option>
-<option value="27">Base-27</option>
-<option value="28">Base-28</option>
-<option value="29">Base-29</option>
-<option value="30">Base-30</option>
-<option value="31">Base-31</option>
-<option value="32">Base-32</option>
-<option value="33">Base-33</option>
-<option value="34">Base-34</option>
-<option value="35">Base-35</option>
-<option value="36">Base-36</option>
-</select></td>
-
-</table>
-
-
-
-
-
- <div class="inbox2"><p  style="text-align: center">To:    <input type="text" id="output_value" class="form-control"  placeholder="Result will show here...."   style="font-size: medium; color: #17B30F"></input>       </p>      </div>
-
-<br>
-
- </div>
-                             </div>
-
-<br>   <br>  <br>
-
-      <div class="para">
-<p   style="font-family: 'Comic Sans MS', cursive, sans-serif; color: #F0F71E; font-size: 27px"   >
-    The number system is simply a system to represent or express numbers.<br>
-There are various types of number systems and the most commonly used <br> ones are decimal number system,
- binary number system,<br> octal number system and hexadecimal number system.    </p>
-
-
-
- </div>
-
-                 <br><br>
-
-
-
-
-
-
-
+</select>
+</div>
+<div class="form-group">
+<label for="x2">Second number</label>
+<div class="input-group">
+<input type="text" id="x2" name="x2" class="form-control">
+<div class="input-group-append">
+<select id="b2" class="form-control">
+<option>Binary</option>
+<option>Decimal</option>
+<option>Hex</option>
+</select>
+</div>
+</div>
+</div>
+<div class="form-group">
+<button type="button" title="Calculate" class="btn btn-secondary" onclick="calc()"><span>=</span> Calculate</button>
+<button type="reset" title="Reset" class="btn btn-secondary"><span>&times;</span> Reset</button>
+</div>
+<div class="form-group">
+<label for="y1">Binary result</label>
+<textarea rows="2" id="y1" class="form-control" readonly></textarea>
+</div>
+<div class="form-group">
+<label for="y2">Decimal result</label>
+<textarea rows="2" id="y2" class="form-control" readonly></textarea>
+</div>
+<div class="form-group">
+<label for="y3">Hex result</label>
+<textarea rows="2" id="y3" class="form-control" readonly></textarea>
+</div>
 </form>
+<p>* and,or,not,xor operations are limited to 32 bits numbers</p>
+<p><a href="/convert/number/binary-converter.html">Binary converter &#9658;</a></p>
+<p>&nbsp;</p>
+<hr>
+<h2>See also</h2>
+<ul>
+<li><a href="/convert/number/binary-to-decimal.html">Binary to decimal converter</a></li>
+<li><a href="/convert/number/decimal-to-binary.html">Decimal to binary converter</a></li>
+<li><a href="base-calculator.html">Base calculator</a></li>
+<li><a href="/convert/number/base-converter.html">Base converter</a></li>
+<li><a href="/math/number/Numeral_system.html">Numeral systems</a></li>
+<li><a href="/convert/number/hex-dec-bin-converter.html">Hex/decimal/octal/binary converter</a></li>
+<li><a href="/convert/number/binary-to-hex.html">Binary to Hex converter</a></li>
+<li><a href="/convert/number/hex-to-decimal.html">Hex to Decimal converter</a></li>
+<li><a href="index.html">Number conversion</a></li>
+</ul>
 
-
-
-
-<br><br>
-
-
-
-
-
-
-  <h3  style="color: #FFFFFF">Write Your Comments</h3>
-
-
- <div class=para>
-
-                <div class="commentblur">
-  <div class="modal">
-
-
-<div class="fb-comments" data-href="https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/" data-numposts="6" data-width="500" data-colorscheme="light"></div>
+<div id="ban-ad">
+<ins class="adsbygoogle adslot_3" data-ad-client="ca-pub-5335356106950684" data-ad-slot="3065550301"></ins>
+</div>
 
 
 </div>
-            </div> </div>
+<div id="fdbk">
+<h2><a id="feedback"></a>Write how to improve this page</h2>
+<form id="fdbkform">
+<textarea id="fdbkarea" rows="4" minlength="30" maxlength="1000" placeholder="Your message ..." required class="form-control"></textarea>
+<span id="fdbkmsg"></span>
+<button type="submit" class="btn btn-secondary" onclick="OnSubFb()">Submit Feedback</button>
+</form>
+</div>
+</div>
+<div id="rcol">
 
+<ins class="adsbygoogle adslot_2" data-ad-client="ca-pub-5335356106950684" data-ad-slot="2437938306"></ins>
 
-<br><br>
-<P style="text-align: center; color: #FCFFFB" >          Share On  <br>
+<h5>MATH CALCULATORS</h5>
+<ul>
+<li><a href="calculator.html">Online math calculator</a></li>
+<li><a href="adding-fractions-calculator.html">Adding fractions calculator</a></li>
+<li><a href="Add_Calculator.html">Addition calculator</a></li>
+<li><a href="anti-log-calculator.html">Antilog calculator</a></li>
+<li><a href="Arccos_Calculator.html">Arccos calculator</a></li>
+<li><a href="Arcsin_Calculator.html">Arcsin calculator</a></li>
+<li><a href="Arctan_Calculator.html">Arctan calculator</a></li>
+<li><a href="average-calculator.html">Average calculator</a></li>
+<li><a href="base-calculator.html">Base calculator</a></li>
+<li><a href="binary-calculator.html">Binary calculator</a></li>
+<li><a href="convolution-calculator.html">Convolution calculator</a></li>
+<li><a href="Cos_Calculator.html">Cosine calculator</a></li>
+<li><a href="dividing-fractions-calculator.html">Dividing fractions calculator</a></li>
+<li><a href="division-calculator.html">Division calculator</a></li>
+<li><a href="exponential-growth-calculator.html">Exponential growth calculator</a></li>
+<li><a href="Exponent_Calculator.html">Exponents calculator</a></li>
+<li><a href="Factorial_Calculator.html">Factorial calculator</a></li>
+<li><a href="fractions-calculator.html">Fractions calculator</a></li>
+<li><a href="gcf-calculator.html">GCF calculator</a></li>
+<li><a href="lcm-calculator.html">LCM calculator</a></li>
+<li><a href="Ln_Calc.html">Ln calculator</a></li>
+<li><a href="Log_Calculator.html">Log calculator</a></li>
+<li><a href="multiplication-calculator.html">Multiplication calculator</a></li>
+<li><a href="multiplying-fractions-calculator.html">Multiplying fractions calculator</a></li>
+<li><a href="Percentage_Calculator.html">Percentage calculator</a></li>
+<li><a href="percentage-change-calculator.html">Percentage change calculator</a></li>
+<li><a href="percent-error-calculator.html">Percent error calculator</a></li>
+<li><a href="percentage-increase-calculator.html">Percentage increase calculator</a></li>
+<li><a href="pythagorean-calculator.html">Pythagorean theorem calculator</a></li>
+<li><a href="Quadratic_Calculator.html">Quadratic equation solver</a></li>
+<li><a href="random-number-generator.html">Random number generator</a></li>
+<li><a href="ratio-calculator.html">Ratio calculator</a></li>
+<li><a href="root-calculator.html">Root calculator</a></li>
+<li><a href="scientific-notation-calculator.html">Scientific notation calculator</a></li>
+<li><a href="fraction-simplifier.html">Fraction simplifier</a></li>
+<li><a href="Sin_Calculator.html">Sine calculator</a></li>
+<li><a href="square-root-calculator.html">Square root calculator</a></li>
+<li><a href="standard-deviation-calculator.html">Standard deviation calculator</a></li>
+<li><a href="subtracting-fractions-calculator.html">Subtracting fractions calculator</a></li>
+<li><a href="subtraction-calculator.html">Subtraction calculator</a></li>
+<li><a href="Tan_Calculator.html">Tangent calculator</a></li>
+<li><a href="trigonometry-calculator.html">Trigonometry calculator</a></li>
+<li><a href="weighted-average-calculator.html">Weighted average calculator</a></li>
+<li><a href="variance-calculator.html">Variance calculator</a></li>
+</ul>
+<h5>RAPID TABLES</h5>
+<ul>
+<li><a href="mailto:?subject=RapidTables%20website&amp;body=Please%20checkout%20this%20site:%20https://www.rapidtables.com">Recommend Site</a></li>
+<li><a href="#feedback">Send Feedback</a></li>
+<li><a href="/about/about.html">About</a></li>
+</ul>
 
+</div>
+</div>
+<div id="footer">
+<a href="/index.html">Home</a> |
+<a href="/web/index.html">Web</a> |
+<a href="/math/index.html">Math</a> |
+<a href="/electric/index.html">Electricity</a> |
+<a href="/calc/index.html">Calculators</a> |
+<a href="/convert/index.html">Converters</a> |
+<a href="/tools/index.html">Tools</a>
+<p>&copy;
+<a href="/">RapidTables.com</a> |
+<a href="/about/about.html" rel="nofollow">About</a> |
+<a href="/about/terms.html" rel="nofollow">Terms of Use</a> |
+<a href="/about/privacy.html" rel="nofollow">Privacy Policy</a> |
+<a href="/about/cookies.html" rel="nofollow">Manage Cookies</a>
+</p>
+</div>
+<div id="banner">
+<div>
+This website uses cookies to improve your experience, analyze traffic and display ads.
+<a href="https://www.rapidtables.com/about/privacy.html">Learn more</a>
+</div>
+<div>
+<a id="banokbtn">OK</a>
+<a id="bansetbtn" href="/about/cookies.html">Manage Settings</a>
+</div>
+</div>
 
-
-
-
-    <a href="http://instagram.com/###?ref=badge"https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/ class="ig-b- ig-b-v-24"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram" />
-      </a>
-
-
-
-    <a href="http://www.facebook.com/sharer.php?u=https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/" target="_blank">
-    <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt="Facebook" />
-    </a>
-
-
-    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/" target="_blank">
-       <img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn" />
-    </a>
-
-
-
-
-    <a href="https://twitter.com/share?url=https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/" target="_blank">
-        <img src="https://img.icons8.com/fluent/48/000000/twitter.png" alt="Twitter" />
-    </a>
-
-
-
-
-      </P>
-
-
-
-                      <table align="center"> <tr>       <td>
-
-                    <a href="https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/">
-<img border="0" alt="HOME" src="https://i.imgur.com/PW5Ccl0.png"  height="300">
-</a>
-
-                      <a href="https://drive.google.com/file/d/1Hw91XA9c1CuLKp9PhAt1ujZ963ZsagEBf/view?usp=sharing">
-<img border="0" alt="ABOUT US" src="https://i.imgur.com/oZLxAI6.png"  height="300">
-
-
-</a>                                            </td>
-                                              </tr>
-                                          </table>
-
-
-                                          <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
-$(document).ready(function() {
-    $('[name="input_"]').click(function (){
-        $('#input_num').val($(this).val());
-        $('#input_value').val("");
-        $('#output_value').val("");
-    });
-    $('[name="output_"]').click(function (){
-        $('#output_num').val($(this).val());
-        px(1);
-    });
-    $("#input_num").change(function(){
-        $("#input_area input").removeAttr("checked");
-        var val = $(this).val();
-        $("#input_area input[value="+val+"]").attr("checked","checked");
-        $('#input_value').val("");
-        $('#output_value').val("");
-    });
-    $("#output_num").change(function(){
-        $("#output_area input").removeAttr("checked");
-        var val = $(this).val();
-        $("#output_area input[value="+val+"]").attr("checked","checked");
-        px(1);
-    });
-});
-function pxparseFloat(x,y){
-    x=x.toString();
-    var num=x;
-    var data=num.split(".");
-    var you=data[1].split("");
-    var sum=0;
-    for(var i=0;i<data[1].length;i++){
-        sum+=you[i]*Math.pow(y,-1*(i+1))
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/lib/bignumber/bignumber9.0.0.min.js"></script>
+<script>
+   "use strict"
+	$( document ).ready(function() {
+      $("#x1").on("input", function(e) {
+         var s = $("#x1").val();
+         var dec  = /[2-9]/.test(s);
+         var hex  = /[A-F]/i.test(s);
+         if( dec ) $("#b1")[0].selectedIndex=1;
+         if( hex ) $("#b1")[0].selectedIndex=2;
+      });
+      $("#x2").on("input", function(e) {
+         var s = $("#x2").val();
+         var dec  = /[2-9]/.test(s);
+         var hex  = /[A-F]/i.test(s);
+         if( dec ) $("#b2")[0].selectedIndex=1;
+         if( hex ) $("#b2")[0].selectedIndex=2;
+      });
+	});
+	function copy()
+	{
+		$("#y").select();
+		document.execCommand('copy');
+	}
+	function selchange() {
+      var op = $("#op")[0].selectedIndex;
+      if( op==7 )
+         $("#calcform>div:nth-child(3)").hide();
+      else
+         $("#calcform>div:nth-child(3)").show();
+      if( op>=8 )
+         $("#b2")[0].selectedIndex=1;
     }
-    return parseInt(data[0],y)+sum;
-}
-function zhengze(x){
-    var str;
-    x=parseInt(x);
-    if(x<=10){
-        str=new RegExp("^[+\\-]?[0-"+(x-1)+"]*[.]?[0-"+(x-1)+"]*$","gi");
-    }else{
-        var letter="";
-        switch(x){
-            case 11:letter="a";break;
-            case 12:letter="b";break;
-            case 13:letter="c";break;
-            case 14:letter="d";break;
-            case 15:letter="e";break;
-            case 16:letter="f";break;
-            case 17:letter="g";break;
-            case 18:letter="h";break;
-            case 19:letter="i";break;
-            case 20:letter="j";break;
-            case 21:letter="k";break;
-            case 22:letter="l";break;
-            case 23:letter="m";break;
-            case 24:letter="n";break;
-            case 25:letter="o";break;
-            case 26:letter="p";break;
-            case 27:letter="q";break;
-            case 28:letter="r";break;
-            case 29:letter="s";break;
-            case 30:letter="t";break;
-            case 31:letter="u";break;
-            case 32:letter="v";break;
-            case 33:letter="w";break;
-            case 34:letter="x";break;
-            case 35:letter="y";break;
-            case 36:letter="z";break;
-        }
-        str=new RegExp("^[+\\-]?[0-9a-"+letter+"]*[.]?[0-9a-"+letter+"]*$","gi");
-    }
-    return str;
-}
-var n=50;
-var shurukuang="";
-var flag="";
-function px(y){
-    if($("#input_value").val()!=flag||y){
-        flag=$("#input_value").val();
-        if($("#input_num").selectedIndex<n){
-            $("#input_value").val("");
-            $("#output_value").val("");
-        }else{
-            var px00=$("#input_value").val();
-            var px0=px00.match(zhengze($("#input_num").val()));
-            if(px0){
-                if(px0[0].indexOf(".")==-1){
-                    var px1=parseInt(px0,$('#input_num').val());
-                }else{
-                    var px1=pxparseFloat(px0,$('#input_num').val());
-                }
-                px1=px1.toString($('#output_num').val());
-                $("#output_value").val(px1);
-                shurukuang=px00;
-            }else{
-                $("#input_value").val(shurukuang);
-            }
-        }
-        n=$("#input_num").selectedIndex;
-    }
-    if($("#input_value").val()==""){
-        $("#output_value").val("");
-    }
-}
+	function calc() {
+		var op = $("#op")[0].selectedIndex;
+		var x1 = $("#x1").val();
+		var x2 = $("#x2").val();
+		var b1 = $("#b1")[0].selectedIndex;
+		var b2 = $("#b2")[0].selectedIndex;
+      var bx1,bx2,y,y1,y2,y3;
+      b1 = [2,10,16][b1];
+      b2 = [2,10,16][b2];
+      try {
+         bx1 = new BigNumber(x1, b1);
+         $("#x1").css("background-color", "white");
+      }
+      catch(err) {
+         $("#x1").css("background-color", "#fff0f0");
+         $("#x1").focus();
+         $("#y1").val("");
+         $("#y2").val("");
+         $("#y3").val("");
+         return;
+      }
+      try {
+         bx2 = new BigNumber(x2, b2);
+         $("#x2").css("background-color", "white");
+      }
+      catch(err) {
+         $("#x2").css("background-color", "#fff0f0");
+         $("#x2").focus();
+         $("#y1").val("");
+         $("#y2").val("");
+         $("#y3").val("");
+         return;
+      }
+      if( op>4 ) {
+         x1 = parseInt(x1, b1);
+         x2 = parseInt(x2, b2);
+      }
+      switch(op) {
+         case 0:
+            //y = bx1.plus(bx2).toString(2);
+            y = bx1.plus(bx2);
+            break;
+         case 1:
+            //y = x1.minus(x2).toString(2);
+            y = bx1.minus(bx2);
+            break;
+         case 2:
+            //y = x1.times(x2).toString(2);
+            y = bx1.times(bx2);
+            break;
+         case 3:
+            //y = x1.div(x2).toString(2);
+            //n = n.pow
+            y = bx1.div(bx2);
+            break;
+         case 4:
+            //y = x1.div(x2).toString(2);
+            //n = n.pow
+            if( x2!=Math.round(x2) ) { alert("Please enter integer exponent"); return; }
+            y = bx1.pow(bx2);
+            break;
+         case 5: //and
+            y = x1 & x2;
+            //var bin1=bx1.toString(2);
+            //var bin2=bx2.toString(2);
+            break;
+         case 6: //or
+            y = x1 | x2;
+            break;
+         case 7: //not
+            y1 = (~x1>>>0).toString(2);
+            y2 = (~x1>>>0).toString(10);
+            y3 = (~x1>>>0).toString(16).toUpperCase();
+            break;
+         case 8: //xor
+            y = x1 ^ x2;
+            break;
+         case 9: //shl
+            //y = x1 << x2;
+            var n = new BigNumber(2);
+            n = n.pow(x2);
+            y = bx1.times(n);
+            break;
+         case 10: //shr signed
+            //y = x1 >> x2;
+            var n = new BigNumber(2);
+            n = n.pow(x2);
+            y = bx1.div(n);               
+            break;
+         //case 10: //shr zerofill
+         //      //var n = Math.pow(2,x2);
+               //y = bx1.div(n).toString(2);
+         //      y = x1 >>> x2;
+         //      break;
+      }
+      if( op!=7 ) {
+         BigNumber.set({ DECIMAL_PLACES: 16 });
+         y1 = y.toString(2);
+         y2 = y.toString(10);
+         y3 = y.toString(16).toUpperCase();
+      }
+		$("#y1").val(y1);
+		$("#y2").val(y2);
+		$("#y3").val(y3);
+	}
 </script>
-</div>
-</div>
-</div>
 
+</body>
 
-
-
-
- </body>
 </html>
