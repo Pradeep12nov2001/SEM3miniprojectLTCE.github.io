@@ -1,7 +1,7 @@
+
  <!DOCTYPE HTML>
 <html>
 <head>
-
 <title  align="center">Number System Website</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -152,8 +152,6 @@ opacity: 1;
         display: none;
     }
 
-
-
 .container {
     align-items: center;
     display: flex;
@@ -161,7 +159,6 @@ opacity: 1;
     height: 100%;
     width: 100%;
 }
-
 
      input[type=text]{
     width:55%;
@@ -179,11 +176,7 @@ opacity: 1;
     box-shadow:0 0 8px 0 dodgerBlue;
   }
 
-
  h3 {margin-left: 55px;}
-
-
-
 
 textarea:focus {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -209,51 +202,6 @@ textarea:focus {
 
   margin-left: 70px;
 }
-
-
-
-
-
-/* custom radio button */
-.check {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 30px;
-  width: 30px;
-  background-color: lightgray;
-  border-radius: 50%;
-}
-
-.container:hover input ~ .check {
-  background-color: gray;
-}
-
-.container input:checked ~ .check {
-  background-color: red;
-}
-
-.check:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.container input:checked ~ .check:after {
-  display: block;
-}
-
-.container .check:after {
- 	top: 8px;
-    left: 8px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: white;
-}
-
-
-
     .commentblur {
     align-items: left;
     display: flex;
@@ -284,17 +232,51 @@ select::-ms-expand {
   top:50%;
   margin-top:-7px;
 }
+
+
+/*custom radio*/
+.radio-toolbar {
+  margin: 10px;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 10px 25px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 5px;
+}
+
+.radio-toolbar label:hover {
+  background-color: #dfd;
+}
+
+.radio-toolbar input[type="radio"]:focus + label {
+    border: 2px dashed #444;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color: #bfb;
+    border-color: #4c4;
+              }
+
        </style>
 
 
 <script>(function(w, d) { w.CollectId = "6097cf6317795f66ab8fee85"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
 </head>
 
-
 <div class="wrapper"  </div>
 
  <div class="box">
-
             <div></div>
             <div></div>
             <div></div>
@@ -305,58 +287,45 @@ select::-ms-expand {
             <div></div>
             <div></div>
             <div></div>
-
-
-
     </div>
 
     <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="rksZpnLo"></script>
 
 <body
-
 <br>
-
           <br>
           <table>
                     <tr>     <td>
                       <img src="https://i.imgur.com/bjDwBlM.png" alt="NWC" height="650" />
 
                                                 </td>
-
-
-
                   <td><p  style="font-size: 50px;font-family: 'Comic Sans MS', cursive, sans-serif; color: #FFFFFF"  >Number rules the universe.</p></td></tr>
 
-
-
 </table>
-
-
-
-
-
-
 <h1    style="text-align: center; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; color: #FFFFFF"  >Number Conversion</h1>
-
-
-
-
-
 
                      <div class="container">
   <div class="modal">
 
-    <table  align="center">
+            <div class="radio-toolbar">
 
-               <br>
-            <tr>
-                <td  style="font-size: 25px"> Base Select :</td><td>
-                    <input type="radio"  name='input_' value="2"   />Binary</span>   </td>
-                 <td ><input type="radio" name='input_' value="8" /> Octal </td>
-                  <td><input type="radio"name='input_' value="10" />Decimal  </td>
-                   <td><input type="radio"  name='input_' value="16" />Hexadecimal </td>
-                    <td><select id="input_num" class="form-control"  style="font-size: 16px">
+                              <font size="5" face="Courier New"   style="font-weight: bold">
+       <p >   Select Base </p>    </font>
+
+                    <input type="radio" id="radioApple"  name='input_' value="2">
+                                             <label for="radioApple" >Binary </label>
+
+            <input type="radio" id="radioBanana" name='input_' value="8" >
+               <label for="radioBanana">Octal</label>
+
+                  <input type="radio"  id="radioOrange"  name='input_' value="10" >
+                     <label for="radioOrange">Decimal</label>
+
+                   <input type="radio" id="radioHexa"  name='input_' value="16" >
+                      <label for="radioHexa">Hexadecimal</label>
+
+                    <select id="input_num" class="form-control"  style="font-size: 16px">
 <option value="2">Binary</option>
 <option value="3">Base-3</option>
 <option value="4">Base-4</option>
@@ -392,26 +361,28 @@ select::-ms-expand {
 <option value="34">Base-34</option>
 <option value="35">Base-35</option>
 <option value="36">Base-36</option>
-</select></td>
-            </tr>
-            </table>
-
-
-
+</select>
+                     </div>
 
          <div class="inbox1">   <p  style="text-align: center">From:   <input id="input_value" type="text" value=""  onpropertychange="px()" onchange="px()" oninput="px()" class="form-control" placeholder="Input"    style="font-size: medium; color: #DB0000""></p> </div>
 
+                                       <div class="radio-toolbar">
+                                       <font size="5" face="Courier New"   style="font-weight: bold">
+       <p >   Select Base </p>    </font>
 
+                  <input type="radio" id="radiobinary2" name='output_' value="2" />
+                       <label for="radiobinary2" >Binary </label>
 
+                      <input type="radio" id="radiooctal2" name='output_' value="8" />
+                       <label for="radiooctal2" >Octal </label>
 
-                      <table align="center">
-                 <tr>
-                      <td  style="font-size: 25px">Base Select :</td>
-                      <td><input type="radio" name='output_' value="2" />Binary    </td>
-                      <td><input type="radio" name='output_' value="8" />Octal </td>
-                      <td><input type="radio" name='output_' value="10"/>Decimal </td>
-                       <td><input type="radio" name='output_' value="16" />Hexadecimal </td>
-                         <td><select id="output_num" onchange="px(1);" class="form-control"  style="font-size: 16px" >
+                      <input type="radio" id="radiodecimal2" name='output_' value="10"/>
+                       <label for="radiodecimal2" >Decimal </label>
+
+                       <input type="radio" id="radiohexa2" name='output_' value="16" />
+                       <label for="radiohexa2" >Hexadecimal </label>
+
+                         <select id="output_num" onchange="px(1);" class="form-control"  style="font-size: 16px" >
 <option value="2">Binary</option>
 <option value="3">Base-3</option>
 <option value="4">Base-4</option>
@@ -447,36 +418,26 @@ select::-ms-expand {
 <option value="34">Base-34</option>
 <option value="35">Base-35</option>
 <option value="36">Base-36</option>
-</select></td>
+</select>
+              </div>
 
-</table>
-
-
-
-
-
- <div class="inbox2"><p  style="text-align: center">To:    <input type="text" id="output_value" class="form-control"  placeholder="Result will show here...."   style="font-size: medium; color: #17B30F"></input>       </p>      </div>
-
-<br>
-
+ <div class="inbox2"><p  style="text-align: center">To:    <input type="text" id="output_value" class="form-control"  placeholder="Result"   style="font-size: medium; color: #17B30F"></input>       </p>      </div>
  </div>
-                             </div>
+           </div>
 
 <br>                      <br>
 <br>
-
                           <h1    style="text-align: center; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; color: #FFFFFF"  >Base Calculator</h1>
 
                <div class="container">
   <div class="modal">
 
-
     <font size="5" face="Courier New"   style="font-weight: bold">
 <table style="width:800px; ">
 <tbody>
 
-<tr>
-<td ></td>          <td>
+<tr><td></td>
+          <td>
 
 <select id="base"  style="font-size: 16px" class="form-control" name="base" onchange="baseCal();">
 
@@ -518,9 +479,10 @@ select::-ms-expand {
 </select>
 </td>
 </tr>
+
 <tr>
 <td>First number:</td>
-<td><input type="text" id="num1" value="" style="font-size: 16px" name="num1" class="form-control" onkeyup="baseCal();"> </td>
+<td><input type="text" id="num1" value=""  style="font-size: 16px" name="num1" class="form-control" onkeyup="baseCal();"> </td>
 </tr>
 <tr>
 <td class="fwb">Select operation:</td>
@@ -534,15 +496,16 @@ select::-ms-expand {
 </select>
 </td>
 </tr>
+
 <tr>
 <td class="fwb">Second number:</td>
-<td><input type="text" id="num2" value="" style="font-size: 16px" name="num2" class="form-control" onkeyup="baseCal();"></td>
+<td><input type="text"  id="num2" value="" style="font-size: 16px" name="num2" class="form-control" onkeyup="baseCal();"></td>
 </tr>
 
 
 <tr>
 <td class="fwb">Result:</td>
-<td><textarea rows="2" style="font-size: 16px" id="res" class="form-control" readonly></textarea></td>
+<td><textarea rows="2" placeholder="Result will show here..." style="font-size: 16px" id="res" class="form-control" readonly></textarea></td>
 </tr>
 </tbody>
 </table>
@@ -556,85 +519,44 @@ select::-ms-expand {
 There are various types of number systems and the most commonly used <br> ones are decimal number system,
  binary number system,<br> octal number system and hexadecimal number system.    </p>
 
-
-
  </div>
 
-                 <br>
-
-
-                 <br>
-
-
-
-
-
-
-
-
-
-
-
+ <br>              <br>
 
 <br><br>
 
-
-
-
-
-
   <h3  style="color: #FFFFFF">Write Your Comments</h3>
-
-
  <div class=para>
-
                 <div class="commentblur">
   <div class="modal">
 
-
 <div class="fb-comments" data-href="https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/" data-numposts="6" data-width="500" data-colorscheme="light"></div>
 
-
-</div>
-            </div> </div>
-
+</div></div> </div>
 
 <br><br>
 <P style="text-align: center; color: #FCFFFB" >          Share On  <br>
-
-
-
 
 
     <a href="http://instagram.com/###?ref=badge"https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/ class="ig-b- ig-b-v-24"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram" />
       </a>
 
 
-
     <a href="http://www.facebook.com/sharer.php?u=https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/" target="_blank">
     <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt="Facebook" />
     </a>
-
 
     <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/" target="_blank">
        <img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn" />
     </a>
 
 
-
-
     <a href="https://twitter.com/share?url=https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/" target="_blank">
         <img src="https://img.icons8.com/fluent/48/000000/twitter.png" alt="Twitter" />
     </a>
 
-
-
-
       </P>
-
-
-
-                      <table align="center"> <tr>       <td>
+           <table align="center"> <tr>       <td>
 
                     <a href="https://pradeep12nov2001.github.io/SEM3miniprojectLTCE.github.io/">
 <img border="0" alt="HOME" src="https://i.imgur.com/PW5Ccl0.png"  height="300">
@@ -648,20 +570,9 @@ There are various types of number systems and the most commonly used <br> ones a
                                               </tr>
                                           </table>
 
-
                                           <br>
 
-
-
-
-
-
-
-
-
-
-
-
+                 /*Java script*/
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -770,9 +681,7 @@ function px(y){
     }
 }
 
-
-
-        </script>
+  </script>
 
 <script type="text/javascript" src="https://www.easyunitconverter.com/js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="https://www.easyunitconverter.com/js/jquery.autocomplete.js"></script>
@@ -784,24 +693,19 @@ function px(y){
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161720880-1"></script>
 <script type="text/javascript">
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'UA-161720880-1');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-161720880-1');
 </script>
-
-
 
 </body>
 </html>
-
 </div>
 </div>
 </div>
-
-
-
-
 
  </body>
+
 </html>
+
